@@ -69,10 +69,10 @@ function Candidate(props) {
                         <p>{props.desc}</p>
                     </div>
                     <div className='likesDiv'>
-                    <h3>Votes:<br></br> {props.votes}</h3>
-                    <img onClick={props.changeUpVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/facebook-like.png" />
-                    <br/>
-                    <img onClick={props.changeDownVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/thumbs-down.png" />
+                        <h3>Votes:<br></br> {props.votes}</h3>
+                        <img onClick={props.changeUpVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/facebook-like.png" />
+                        <br />
+                        <img onClick={props.changeDownVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/thumbs-down.png" />
                     </div>
                 </div>
             </div>
