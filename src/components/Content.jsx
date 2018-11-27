@@ -15,6 +15,9 @@ function Content(props){
             votes = {candidate.votes}
             image = {candidate.image}
             key = {index}
+            position = {candidate.position}
+            changeUpVote = {() => props.changeUpVote(candidate)}
+            changeDownVote = {() => props.changeDownVote(candidate)}            
           />
 
         ))}
