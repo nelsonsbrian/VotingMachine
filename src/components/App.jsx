@@ -100,7 +100,7 @@ class App extends React.Component {
       newList = this.state.masterLocalList.slice();
     }
     let index = newList.indexOf(person);
-    person.votes = person.votes + 1;
+    person.votes++;
     newList[index] = person;
     if (this.state.candidate === "Pres") {
       this.setState( { masterPresList: newList })
@@ -110,7 +110,7 @@ class App extends React.Component {
       this.setState( { masterLocalList: newList })
     }
   }
-
+  
   changeDownVote(person) {
     let newList;
     if (this.state.candidate === "Pres") {
@@ -121,7 +121,9 @@ class App extends React.Component {
       newList = this.state.masterLocalList.slice();
     }
     let index = newList.indexOf(person);
-    person.votes = person.votes - 1;
+    if (person.votes >= 1) {
+      person.votes--;
+    } 
     newList[index] = person;
     if (this.state.candidate === "Pres") {
       this.setState( { masterPresList: newList })

@@ -4,8 +4,11 @@ import Candidate from './Candidate';
 
 function Content(props){
     return(
+
+        
+        
         <div>
-        {props.data.map((candidate, index) => (
+        {props.data.sort((a, b) => b.votes - a.votes).map((candidate, index) => (
           <Candidate
             name = {candidate.name}
             desc = {candidate.desc}
