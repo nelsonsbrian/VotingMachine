@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Proptypes from 'prop-types';
 
 function Candidate(props) {
     return (
@@ -70,14 +70,27 @@ function Candidate(props) {
                     </div>
                     <div className='likesDiv'>
                         <h3>Votes:<br></br> {props.votes}</h3>
-                        <img onClick={props.changeUpVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/facebook-like.png" />
+                        <img onClick={props.handleChangeUpVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/facebook-like.png" />
                         <br />
-                        <img onClick={props.changeDownVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/thumbs-down.png" />
+                        <img onClick={props.handleChangeDownVote} className='likephoto' src="https://img.icons8.com/dusk/40/34495e/thumbs-down.png" />
                     </div>
                 </div>
             </div>
         </div>
     )
+}
+
+Candidate.propTypes = {
+    position: Proptypes.string,
+    image: Proptypes.string,
+    name: Proptypes.string,
+    age: Proptypes.number,
+    exp: Proptypes.number,
+    party: Proptypes.string,
+    desc: Proptypes.string,
+    votes: Proptypes.number,
+    handleChangeDownVote: Proptypes.func,
+    handleChangeUpVote: Proptypes.func
 }
 
 export default Candidate;

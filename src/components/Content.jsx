@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Proptypes from 'prop-types';
 import Candidate from './Candidate';
 
 function Content(props) {
     return (
-
-
-
         <div>
             {props.data.sort((a, b) => b.votes - a.votes).map((candidate, index) => (
                 <Candidate
@@ -19,13 +16,20 @@ function Content(props) {
                     image={candidate.image}
                     key={index}
                     position={candidate.position}
-                    changeUpVote={() => props.changeUpVote(candidate)}
-                    changeDownVote={() => props.changeDownVote(candidate)}
+                    handleChangeUpVote={() => props.handleChangeUpVote(candidate)}
+                    handleChangeDownVote={() => props.handleChangeDownVote(candidate)}
                 />
 
             ))}
         </div>
     )
 }
+
+Content.propTypes = {
+    // data: Proptypes.array,
+    handleChangeDownVote: Proptypes.func,
+    handleChangeUpVote: Proptypes.func
+}
+
 
 export default Content;

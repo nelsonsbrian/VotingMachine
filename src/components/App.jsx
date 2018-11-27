@@ -80,9 +80,9 @@ class App extends React.Component {
         }
       ]
     };
-    this.changeCandidate = this.changeCandidate.bind(this);
-    this.changeUpVote = this.changeUpVote.bind(this);
-    this.changeDownVote = this.changeDownVote.bind(this);
+    this.Candidate = this.changeCandidate.bind(this);
+    this.handleChangeUpVote = this.handleChangeUpVote.bind(this);
+    this.handleChangeDownVote = this.handleChangeDownVote.bind(this);
   }
 
   changeCandidate(pickedCandidate) {
@@ -90,7 +90,7 @@ class App extends React.Component {
     this.setState({ candidate: temp });
   }
 
-  changeUpVote(person) {
+  handleChangeUpVote(person) {
     let newList;
     if (this.state.candidate === 'Pres') {
       newList = this.state.masterPresList.slice();
@@ -111,7 +111,7 @@ class App extends React.Component {
     }
   }
 
-  changeDownVote(person) {
+  handleChangeDownVote(person) {
     let newList;
     if (this.state.candidate === 'Pres') {
       newList = this.state.masterPresList.slice();
@@ -152,8 +152,8 @@ class App extends React.Component {
           <Header changeCandidate={this.changeCandidate} />
           <Content
             data={data}
-            changeUpVote={this.changeUpVote}
-            changeDownVote={this.changeDownVote}
+            handleChangeUpVote={this.handleChangeUpVote}
+            handleChangeDownVote={this.handleChangeDownVote}
           />
         </div>
 

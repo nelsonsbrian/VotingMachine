@@ -1,18 +1,18 @@
 import React from 'react';
-
+import Proptypes from 'prop-types';
 
 function Header(props) {
 
     function selectPres() {
-        props.changeCandidate("Pres")
+        props.changeCandidate('Pres');
     }
 
     function selectState() {
-        props.changeCandidate("State")
+        props.changeCandidate('State');
     }
 
     function selectLocal() {
-        props.changeCandidate("Local")
+        props.changeCandidate('Local');
     }
 
     return (
@@ -33,14 +33,18 @@ function Header(props) {
 
                 <h1>Voting Machine</h1>
                 <div className='buttons'>
-                    <button className="btn btn-danger mr-3" onClick={selectPres}>President</button>
-                    <button className="btn btn-primary mr-3" onClick={selectState}>State</button>
-                    <button className="btn btn-info" onClick={selectLocal}>Local</button>
+                    <button className='btn btn-danger mr-3' onClick={selectPres}>President</button>
+                    <button className='btn btn-primary mr-3' onClick={selectState}>State</button>
+                    <button className='btn btn-info' onClick={selectLocal}>Local</button>
                 </div>
                 <hr />
             </div>
         </div>
     )
 }
+
+Header.propTypes = {
+    changeCandidate: Proptypes.func
+};
 
 export default Header;
