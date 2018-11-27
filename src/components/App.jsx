@@ -97,10 +97,12 @@ class App extends React.Component {
         <style jsx>{`
             font-family: Helvetica;
           `}</style>
+        <div className='container'>
         <Header changeCandidate={this.changeCandidate} />
-        <Content
-          data={data}
-        />
+          <Content
+            data={data}
+          />
+        </div>
 
         {/* <Switch>
             <Route exact path='/' component={} />
