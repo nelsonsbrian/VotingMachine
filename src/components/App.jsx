@@ -1,7 +1,8 @@
 import React from 'react';
 //import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
-
+import Header from './Header';
+import Content from './Content';
 /*
   import { Link } from 'react-router-dom';
   <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
@@ -15,7 +16,9 @@ function App(){
       <style jsx>{`
         font-family: Helvetica;
       `}</style>
-      votingmachine
+      <Header/>
+      <Content/>
+
       {/* <Switch>
         <Route exact path='/' component={} />
       </Switch> */}
